@@ -57,11 +57,13 @@
 (auto-save-visited-mode 1)
 (setq auto-save-visited-interval 2)
 
+(setq mac-command-modifier 'meta mac-option-modifier 'none) ;; No MacOs, meta virá CMD e não mais Option
+
 (use-package recentf
   :config
   (recentf-mode 1)
   (setq recentf-max-saved-items 50)
- )
+)
 
 (use-package paredit ;;fecha parenteses, chaves, aspas etc
   :hook ((emacs-lisp-mode . enable-paredit-mode)
