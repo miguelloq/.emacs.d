@@ -65,9 +65,11 @@
   (setq recentf-max-saved-items 50)
 )
 
-(use-package paredit ;;fecha parenteses, chaves, aspas etc
+(use-package paredit ;; fecha parenteses, chaves, aspas etc
   :hook ((emacs-lisp-mode . enable-paredit-mode)
-         (clojure-mode . enable-paredit-mode)))
+         (clojure-mode . enable-paredit-mode)
+         (cider-repl-mode . enable-paredit-mode)))
+
 ;;(add-hook 'kotlin-mode-hook #'electric-pair-local-mode) ;; Kotlin fecha aspas/chaves automático
 
 ;; =====================================
