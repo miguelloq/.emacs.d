@@ -91,16 +91,15 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
 
-;;(use-package company ;;recomendacao do kotlin, https://themkat.net/2022/09/24/kotlin_in_emacs_redux.html
-;;  :init
-;;  (global-company-mode)
-;;  :custom
-;;  (company-idle-delay 0)
-;;  (company-echo-delay 0)
-;;  (company-minimum-prefix-length 1)
-;;  :bind ([(control return)] . company-complete))
-;;
-;;(use-package yasnippet ;;ao escolher uma funcao auto-complete faz com que substituir os parametros sejam mais faceis
+(use-package company 
+  :init
+  (global-company-mode)
+  :custom
+  (company-idle-delay 0)
+  (company-echo-delay 0)
+  (company-minimum-prefix-length 1))
+
+;;(use-package yasnippet ;;ao escolher uma funcao auto-complete faz com que substituir os parametros sejam mais faceis, usei no kotlin
 ;;  :config
 ;;  (yas-global-mode 1))
 
@@ -132,7 +131,6 @@
 ;; Flycheck para mostrar os warnings/erros (ex: variáveis não usadas)
 (use-package flycheck
   :hook (lsp-mode . flycheck-mode))
-
 
 ;; =====================================
 ;; CLOJURE
