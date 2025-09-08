@@ -138,6 +138,7 @@
 
 (use-package cider)
 (use-package clj-refactor)
+(unless (eq system-type 'windows-nt)(use-package zprint-mode))
 
 ;; =====================================
 ;; HASKELL
