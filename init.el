@@ -107,15 +107,14 @@
 ;; LSP / IDE Features
 ;; =====================================
 
-;;(use-package kotlin-mode
-;;  :after (lsp-mode dap-mode)
-;;  :hook (kotlin-mode . lsp-deferred)
-;;  :config
-;;  (require 'dap-kotlin)
-;;  (setq lsp-kotlin-debug-adapter-path (or (executable-find "kotlin-debug-adapter") "")))
-
 (use-package lsp-mode
-  :bind ("M-RET" . lsp-execute-code-action))
+  :hook ((clojure-mode . lsp) ;; Usando clojure-lsp, no MacOs: brew install clojure-lsp/brew/clojure-lsp-native
+         (clojurescript-mode . lsp)
+         (clojurec-mode . lsp))
+  :bind ("M-RET" . lsp-execute-code-action)
+  :config
+  (setq lsp-enable-indentation nil
+        lsp-enable-completion-at-point t))
 
 (use-package lsp-ui
   :after lsp-mode
@@ -127,10 +126,6 @@
   :after lsp-mode
   :config
   (lsp-treemacs-sync-mode 1))
-
-;; Flycheck para mostrar os warnings/erros (ex: variáveis não usadas)
-(use-package flycheck
-  :hook (lsp-mode . flycheck-mode))
 
 ;; =====================================
 ;; CLOJURE
