@@ -119,7 +119,6 @@
 (use-package lsp-ui
   :after lsp-mode
   :custom
-  (lsp-ui-sideline-show-code-actions t)
   (lsp-ui-doc-position 'at-point))
 
 (use-package lsp-treemacs
